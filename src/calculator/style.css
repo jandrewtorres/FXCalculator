@@ -1,0 +1,28 @@
+.result-area {
+	-fx-background-color: darkgrey;
+	-fx-text-fill: white;
+}
+
+.operator-button {
+	-fx-background-color: lightblue;
+}
+
+.number-button {
+	-fx-background-color: aliceblue;
+}
+
+.equal-button {
+	-fx-background-color: lightgreen;
+}
+
+.clear-button {
+	-fx-background-color:red;
+}
+
+.border {
+	-fx-border-width: 0px 0.0px 1px 1px;
+	-fx-border-color: darkgray;
+}
+.round {
+	-fx-background-radius: 10 10 0 0;
+}
