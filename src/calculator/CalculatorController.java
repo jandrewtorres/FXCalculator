@@ -1,5 +1,6 @@
 package calculator;
 
+import calculator.operator.OperatorFactory;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
@@ -100,18 +101,9 @@ public class CalculatorController {
 			Float one = Float.parseFloat(firstInputString.get());
 			Float two = Float.parseFloat(secondInputString.get());
 			Float result = new Float(0);
-			if(operatorString.get().equals("+")) {
-				result = one + two;
-			}
-			else if(operatorString.get().equals("-")) {
-				result = one - two;
-			}
-			else if(operatorString.get().equals("*")) {
-				result = one * two;
-			}
-			else {
-				result = one / two;
-			}
+			
+			result = new OperatorFactory().createOperator(operatorString.get()).calculate(one, two);
+
 			resultLabelString.set(Float.toString(result).replaceAll("\\.?0*$", ""));
 			firstInputString.set(Float.toString(result).replaceAll("\\.?0*$", ""));
 			secondInputString.set("");
